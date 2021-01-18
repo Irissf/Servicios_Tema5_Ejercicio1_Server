@@ -20,10 +20,10 @@ namespace Servicios_Tema5_Ejercicio1_Server
 {
     class Program
     {
+        public static bool flag = true;
         static void Main(string[] args)
         {
-
-            string message  = "";
+            string message = "";
 
             IPEndPoint ie = new IPEndPoint(IPAddress.Any, 31416);
 
@@ -37,20 +37,15 @@ namespace Servicios_Tema5_Ejercicio1_Server
             //Esperando una conexión y estableciendo cola de clientes pendientes
             socket.Listen(10);
             //Esperamos y aceptamos la conexion del cliente (socket bloqueante)
-            Socket sClient = socket.Accept();
 
-            using (NetworkStream ns = new NetworkStream(sClient))
-            using (StreamReader sr = new StreamReader(ns))
-            using (StreamWriter sw = new StreamWriter(ns))
+            while (flag)
             {
-                //por ahora============================================================
-                string welcome = "Welcome to The Echo-Logic, Odd, Desiderable," +
-                "Incredible, and Javaless Echo Server(T.E.L.O.D.I.J.E. Server)";
-                sw.WriteLine(welcome);
-                sw.Flush();
-                //=====================================================================
+                Console.WriteLine(flag);
+                Socket sClient = socket.Accept();
 
-                while (message != null)
+                using (NetworkStream ns = new NetworkStream(sClient))
+                using (StreamReader sr = new StreamReader(ns))
+                using (StreamWriter sw = new StreamWriter(ns))
                 {
                     try
                     {
@@ -64,33 +59,34 @@ namespace Servicios_Tema5_Ejercicio1_Server
                     }
                     catch (IOException e)
                     {
-                        break;
+                        Console.WriteLine(e.Message);
                     }
+
                 }
-                Console.WriteLine("Client disconnected.\nConnection closed");
-            }
             sClient.Close();
-            Console.ReadLine();
+            }
+            
+            
         }
 
         public static string SelectMode(string message)
         {
-            string result;
 
             switch (message)
             {
                 case "DATE":
-                    return DateTime.Now.Date.ToString("dd-MM-yyyy");
+                    return DateTime.Now.Date.ToString("dd/MM/yyyy");
                 case "TIME":
                     return DateTime.Now.ToString("hh:mm");
                 case "DATETIME":
                     return DateTime.Now.ToString();
                 case "CLOSE":
-                    return "cLOSE";
+                    flag = false;
+                    return "CLOSE";
                 default:
                     return "COMMAND NOT FOUND";
             }
-            
+
         }
 
     }
