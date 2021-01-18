@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicios_Tema5_Ejercicio1_Server", "Servicios_Tema5_Ejercicio1_Server\Servicios_Tema5_Ejercicio1_Server.csproj", "{5F8EE97A-4FB8-4DD8-8546-23196FE733D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicios_Tema5_Ejercicio2_Client", "Servicios_Tema5_Ejercicio2_Client\Servicios_Tema5_Ejercicio2_Client.csproj", "{9980ACBE-7BBA-4500-8CE9-A19C1D4F7F8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F8EE97A-4FB8-4DD8-8546-23196FE733D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F8EE97A-4FB8-4DD8-8546-23196FE733D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F8EE97A-4FB8-4DD8-8546-23196FE733D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F8EE97A-4FB8-4DD8-8546-23196FE733D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9980ACBE-7BBA-4500-8CE9-A19C1D4F7F8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9980ACBE-7BBA-4500-8CE9-A19C1D4F7F8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9980ACBE-7BBA-4500-8CE9-A19C1D4F7F8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9980ACBE-7BBA-4500-8CE9-A19C1D4F7F8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEFDE65B-0F61-44C7-8CE9-61E72725CD5E}
+	EndGlobalSection
+EndGlobal
