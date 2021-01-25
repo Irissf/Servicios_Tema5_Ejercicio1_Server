@@ -38,7 +38,7 @@ namespace Servicios_Tema5_Ejercicio2_Client
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(14, 14);
+            this.button1.Location = new System.Drawing.Point(19, 27);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(388, 60);
@@ -49,7 +49,7 @@ namespace Servicios_Tema5_Ejercicio2_Client
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(14, 81);
+            this.button2.Location = new System.Drawing.Point(19, 94);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(388, 60);
@@ -60,7 +60,7 @@ namespace Servicios_Tema5_Ejercicio2_Client
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(14, 148);
+            this.button3.Location = new System.Drawing.Point(19, 161);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(388, 60);
@@ -71,7 +71,7 @@ namespace Servicios_Tema5_Ejercicio2_Client
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(14, 215);
+            this.button4.Location = new System.Drawing.Point(19, 228);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(388, 60);
@@ -83,7 +83,7 @@ namespace Servicios_Tema5_Ejercicio2_Client
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 283);
+            this.label1.Location = new System.Drawing.Point(20, 296);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 17);
@@ -99,7 +99,7 @@ namespace Servicios_Tema5_Ejercicio2_Client
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;

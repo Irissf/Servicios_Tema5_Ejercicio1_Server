@@ -16,11 +16,44 @@ namespace Servicios_Tema5_Ejercicio2_Client
     public partial class Form1 : Form
     {
         Button btn;
-        const string IP_SERVER = "127.0.0.1";
+        IPAddress ip;
         int port;
+        Form2 form2;
+        bool correctIP = false;
 
         public Form1()
         {
+            form2 = new Form2();
+           
+
+            while (!correctIP)
+            {
+                DialogResult result;
+                result = form2.ShowDialog();
+                switch (result)
+                {
+                    case DialogResult.OK:
+                        if (form2.textBox1.Text.Length > 0)
+                        {
+                            try
+                            {
+                                ip = IPAddress.Parse(form2.textBox1.Text);
+                                correctIP = true;
+                            }
+                            catch (Exception)
+                            {
+                                MessageBox.Show("La ip es incorrecta");
+                            }
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+            
+
             InitializeComponent();
             port = 31416;
 
@@ -52,7 +85,7 @@ namespace Servicios_Tema5_Ejercicio2_Client
             }
 
             //Indicamos el servidor al que nos queremos conectar y su puerto
-            IPEndPoint ipEP = new IPEndPoint(IPAddress.Parse(IP_SERVER), port);
+            IPEndPoint ipEP = new IPEndPoint(ip, port);
 
             Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
@@ -63,7 +96,7 @@ namespace Servicios_Tema5_Ejercicio2_Client
             }
             catch (SocketException ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("No se ha podido establecer la conexión con el servidor");
                 return;//si el puerto está ocupado o algún error me saca del programa en el main o de una función
             }
 
@@ -78,7 +111,7 @@ namespace Servicios_Tema5_Ejercicio2_Client
                     sw.WriteLine(btn.Tag);
                     sw.Flush();
                     label1.Text = sr.ReadLine();
-                    if (btn.Tag == "CLOSE")
+                    if ((string)btn.Tag == "CLOSE")
                     {
                         server.Close();
                         this.Close();
@@ -86,6 +119,11 @@ namespace Servicios_Tema5_Ejercicio2_Client
                 }
             }
             server.Close();
+        }
+
+        private void ChangeValue(object sender, EventArgs e)
+        {
+
         }
     }
 }
