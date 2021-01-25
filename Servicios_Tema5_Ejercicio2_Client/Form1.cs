@@ -38,6 +38,7 @@ namespace Servicios_Tema5_Ejercicio2_Client
                             try
                             {
                                 ip = IPAddress.Parse(form2.textBox1.Text);
+                                //acepta 122, ya que rellena y el 122 lo pone como 0.0.0.122, por eso entra 
                                 correctIP = true;
                             }
                             catch (Exception)
