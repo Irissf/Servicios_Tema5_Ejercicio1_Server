@@ -28,12 +28,12 @@ namespace Servicios_Tema5_Ejercicio1_Server
             IPEndPoint ie = new IPEndPoint(IPAddress.Any, 31416);
 
             //cremaos el socket
-            Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream,
-           ProtocolType.Tcp);
+            Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             //Enlace de socket al puerto
             //Salta excepción si el puerto está ocupado
             socket.Bind(ie);
+
             //Esperando una conexión y estableciendo cola de clientes pendientes
             socket.Listen(10);
             //Esperamos y aceptamos la conexion del cliente (socket bloqueante)
@@ -63,10 +63,9 @@ namespace Servicios_Tema5_Ejercicio1_Server
                     }
 
                 }
-            sClient.Close();
+                sClient.Close();
             }
-            
-            
+            socket.Close();//Cerrar los socket  
         }
 
         public static string SelectMode(string message)

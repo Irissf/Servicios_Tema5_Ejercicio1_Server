@@ -23,8 +23,9 @@ namespace Servicios_Tema5_Ejercicio2_Client
 
         public Form1()
         {
+            
             form2 = new Form2();
-           
+            
 
             while (!correctIP)
             {
@@ -53,37 +54,19 @@ namespace Servicios_Tema5_Ejercicio2_Client
                 }
 
             }
-            
-
             InitializeComponent();
             port = 31416;
 
+            button1.Tag = "DATE";
+            button2.Tag = "TIME";
+            button3.Tag = "DATETIME";
+            button4.Tag = "CLOSE";
 
         }
 
         private void ClickOn(object sender, EventArgs e)
         {
             btn = (Button)sender;
-
-            if (btn.Name == "button1")
-            {
-                btn.Tag = "DATE";
-            }
-            else
-            if (btn.Name == "button2")
-            {
-                btn.Tag = "TIME";
-            }
-            else
-            if (btn.Name == "button3")
-            {
-                btn.Tag = "DATETIME";
-            }
-            else
-            if (btn.Name == "button4")
-            {
-                btn.Tag = "CLOSE";
-            }
 
             //Indicamos el servidor al que nos queremos conectar y su puerto
             IPEndPoint ipEP = new IPEndPoint(ip, port);
