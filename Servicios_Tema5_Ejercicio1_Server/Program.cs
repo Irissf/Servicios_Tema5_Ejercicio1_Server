@@ -32,7 +32,15 @@ namespace Servicios_Tema5_Ejercicio1_Server
 
             //Enlace de socket al puerto
             //Salta excepción si el puerto está ocupado
-            socket.Bind(ie);
+            try
+            {
+                socket.Bind(ie);
+            }
+            catch (SocketException e) when (e.ErrorCode == (int)SocketError.AddressAlreadyInUse)
+            {
+                //Cuando el error es de puerto en uso
+                Console.WriteLine("Puerto ocupado");
+            }
 
             //Esperando una conexión y estableciendo cola de clientes pendientes
             socket.Listen(10);
