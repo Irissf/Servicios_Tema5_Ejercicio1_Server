@@ -24,8 +24,9 @@ namespace Servicios_Tema5_Ejercicio1_Server
         static void Main(string[] args)
         {
             string message = "";
+            int port = 31416;
 
-            IPEndPoint ie = new IPEndPoint(IPAddress.Any, 31416);
+            IPEndPoint ie = new IPEndPoint(IPAddress.Any, port);
 
             //cremaos el socket
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -40,16 +41,19 @@ namespace Servicios_Tema5_Ejercicio1_Server
             {
                 //Cuando el error es de puerto en uso
                 Console.WriteLine("Puerto ocupado");
+                flag = false;//lo ponemos a false para que no haga lo del while, puesto
+                //que el puerto está ocupado
             }
 
             //Esperando una conexión y estableciendo cola de clientes pendientes
-            socket.Listen(10);
+            socket.Listen(1);
             //Esperamos y aceptamos la conexion del cliente (socket bloqueante)
 
             while (flag)
             {
-                Console.WriteLine(flag);
                 Socket sClient = socket.Accept();
+                IPEndPoint ipEPClient = (IPEndPoint)sClient.RemoteEndPoint;
+                Console.WriteLine("user connected to port: {0} ",ipEPClient.Port);
 
                 using (NetworkStream ns = new NetworkStream(sClient))
                 using (StreamReader sr = new StreamReader(ns))
